@@ -134,7 +134,3 @@ Countdown.ready(function() {
     Countdown.init();
 });
 
-
-Countdown.ready(function() {
-    Countdown.init();
-});
