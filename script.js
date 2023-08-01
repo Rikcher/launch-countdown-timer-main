@@ -21,10 +21,10 @@ var Countdown = {
 
         // Init countdown values
         this.values = {
-            days: this.$.days ? this.$.days.parent().attr('data-init-value') : 0,
-            hours: this.$.hours ? this.$.hours.parent().attr('data-init-value') : 0,
-            minutes: this.$.minutes ? this.$.minutes.parent().attr('data-init-value') : 0,
-            seconds: this.$.seconds ? this.$.seconds.parent().attr('data-init-value') : 0,
+            days: this.$.days ? parseInt(this.$.days.parent().attr('data-init-value'), 10) : 0,
+            hours: this.$.hours ? parseInt(this.$.hours.parent().attr('data-init-value'), 10) : 0,
+            minutes: this.$.minutes ? parseInt(this.$.minutes.parent().attr('data-init-value'), 10) : 0,
+            seconds: this.$.seconds ? parseInt(this.$.seconds.parent().attr('data-init-value'), 10) : 0,
         };
         this.values.days = parseInt(this.values.days, 10);
         this.values.hours = parseInt(this.values.hours, 10);
@@ -128,6 +128,11 @@ var Countdown = {
             callback();
         }
     },
+};
+
+Countdown.ready(function() {
+    Countdown.init();
+});
 };
 
 Countdown.ready(function() {
